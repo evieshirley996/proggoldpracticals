@@ -12,6 +12,10 @@
         font-size: 10px;
       }
 
+      body {
+        background-color: #f5f4f4;
+      }
+
       h2 {
         font-size: 2rem;
       }
@@ -28,7 +32,7 @@
 
       ul {
         padding-left: 2rem;
-        list-style-type: none;
+        list-style-type: circle;
       }
 
       ul li {
@@ -42,59 +46,157 @@
       /* Ordered list styles */
 
       ol {
-        list-style-type: upper-roman;
+        padding-left: 2rem;
+        list-style-type: decimal;
       }
 
       /* Description list styles */
 
       dd, dt {
         line-height: 1.5;
+        padding-left: 2rem;
+      }
+
+      dd {
+        display: list-item;
+        list-style-type: square;
+        padding-left: 2rem;
       }
 
       dt {
         font-weight: bold;
+        display: list-item;
+        list-style-type: circle;
+        list-style-position: inside;
+      }
+
+      .Header {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 5rem;
+        font-family: 'Times New Roman', Times, serif
+      }
+
+      .ingredient-list {
+        border-style: solid;
+        border-width: 0.2rem;
+        border-color: #464545;
+        border-radius: 10px;
+        height: 210px;
+        background-color: #ffffff;
+        padding: 1rem;
+      }
+
+      .row1 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        align-items: start;
+        margin: 25px 80px;
+      }
+
+      .recipe-list {
+        border-style: solid;
+        border-width: 0.2rem;
+        border-color: #464545;
+        border-radius: 10px;
+        background-color: #ffffff;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-right: 80px;
+        margin-left: 80px;
+      }
+
+      .nutrition-list {
+        border-style: solid;
+        border-width: 0.2rem;
+        height: 210px;
+        border-color: #464545;
+        border-radius: 10px;
+        background-color: #ffffff;
+        padding: 1rem;
+      }
+
+      .nutrition-list dl {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 2rem;
+      }
+
+      @media (max-width: 500px) {
+        .row1 {
+          grid-template-columns: 1fr;
+          margin-right: 2rem;
+          margin-left: 2rem;
+        }
+
+        .nutrition-list dl {
+          grid-template-columns: 1fr;
+        }
       }
 
     </style>
   </head>
   <body>
-    <h2>Shopping (unordered) list</h2>
+    <div class="Header">
+          <h1>Caesar Pitta Bread</h1>
+          <img src="caesar-pitta-ca63652.webp" alt="Pitta bread with chicken and salad" width="400" height="300">
+    </div>
 
-    <p>Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference.</p>
+    <div class="row1">
+      <div class="ingredient-list">
+        <h2>Ingredient List</h2>
 
-    <ul>
-      <li>Humous</li>
-      <li>Pitta</li>
-      <li>Green salad</li>
-      <li>Halloumi</li>
-    </ul>
+        <p>This is a list of all the ingredients needed for the pitta bread recipe.</p>
 
-    <h2>Recipe (ordered) list</h2>
+        <ul>
+          <li>Hummus</li>
+          <li>Pitta</li>
+          <li>Green salad</li>
+          <li>Greek yoghurt</li>
+          <li>Chicken</li>
+        </ul>
+      </div>
 
-    <p>Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference.</p>
+      <div class="nutrition-list">
+        <h2>Nutrition List</h2>
 
-    <ol start="4">
-      <li>Toast pitta, leave to cool, then slice down the edge.</li>
-      <li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
-      <li>Wash and chop the salad.</li>
-      <li>Fill pitta with salad, humous, and fried halloumi.</li>
-    </ol>
+        <p>This is a list of all the nutritional information for this pitta bread.</p>
 
-    <h2>Ingredient description list</h2>
+        <dl>
+          <div>
+            <dt>Calories: 461 kcal</dt>
+            <dt>Fat: 17g</dt>
+            <dt>Saturates: 3g</dt>
+            <dt>Carbs: 34g</dt>
+          </div>
+          <div>
+            <dt>Sugars: 7g</dt>
+            <dt>Fibre: 5g</dt>
+            <dt>Protein: 40g</dt>
+            <dt>Salt: 1.5g</dt>
+          </div>
+        </dl>
+      </div>
+    </div>
 
-    <p>Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference.</p>
+    <div class="recipe-list">
+      <h2>Recipe List</h2>
 
-    <dl>
-      <dt>Humous</dt>
-      <dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
-      <dt>Pitta</dt>
-      <dd>A soft, slightly leavened flatbread.</dd>
-      <dt>Halloumi</dt>
-      <dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
-      <dt>Green salad</dt>
-      <dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
-    </dl>
+      <p>This is a list of all the steps needed to make a delicious pitta.</p>
 
+      <ol start="1">
+        <li>Toast pitta, leave to cool, then slice down the edge.</li>
+        <li>Fry the chicken in a shallow, non-stick pan, until cooked through.</li>
+        <li>Wash and chop the salad.</li>
+        <li>Fill pitta with salad, greek yoghurt, humous, and fried chicken.</li>
+      </ol>
+    </div>
 
   </body>
 </html>
